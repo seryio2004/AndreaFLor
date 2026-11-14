@@ -180,3 +180,9 @@ Stageshow (tarea 3) necesita React, Vite y `npm install`; se hará como subproye
 - El degradado de papel sobre la portada es más corto, para que se vea más color sin perder la lectura del titular. Se elimina la versión anterior a trazo.
 
 **Verificación:** capturas a 1440 y 390 px, sin errores de consola. `npm run check` y `npm test` correctos.
+
+## 2026-11-14 · Sesión 6: repositorio
+
+**Qué:** `git init` en la rama `main`, primer commit con todo el proyecto (186 archivos) y subida a `git@github.com:seryio2004/AndreaFLor.git`, que estaba vacío.
+
+**Revisado antes de subir:** `.gitignore` excluye `.env`, las bases de datos (`data/`, `*.db`), las copias (`backups/`), `node_modules`, la demo compilada (`public/demo/`, se regenera con `npm run demo:build`) y el SVG de trabajo del óleo (`art/`, se regenera con `npm run field`). No hay credenciales en el código; la contraseña de `tests/helpers.js` es solo de pruebas.
