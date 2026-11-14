@@ -208,3 +208,23 @@ Stageshow (tarea 3) necesita React, Vite y `npm install`; se hará como subproye
 - `npm run check` 28/28 y `npm test` 24/24.
 
 **No publicado:** el workflow no se ha lanzado y Pages no se ha activado en el repositorio.
+
+## 2026-11-14 · Sesión 8: floristerías en los mapas (demo) y mapas centrados en las ciudades
+
+**Petición:** añadir las principales floristerías de Vigo y Ourense como si fueran clientes, porque es una demo para enseñar a la clienta, y centrar los mapas en las dos ciudades en lugar de en las áreas.
+
+**Antes de hacerlo:** pregunté, porque presentar negocios reales como clientes sin confirmarlo choca con las normas del proyecto. El usuario lo confirmó expresamente para la demo.
+
+**Qué:**
+- **Floristerías (15):**
+  - Vigo (7): OpenStreetMap, filtrando las de la ciudad. Se dejan fuera Verdecora, que es un centro de jardinería, y las de Cangas y Chapela.
+  - Ourense (8): directorios Páxinas Galegas y Bodas.net, situadas por su calle con Nominatim, más Jomacos, que está en OSM. Sagrado Corazón no se pudo localizar.
+  - El archivo lleva `"demo": true`: bajo cada mapa aparece «Datos de demostración».
+- **Mapas de ciudad:** `scripts/generate-maps.mjs` dibuja ahora las dos ciudades con datos reales de OSM, guardados y simplificados en `scripts/map-data/`: costa de la ría y puerto de Vigo, ríos Miño y Barbaña en Ourense, calles principales y barrios.
+  - El agua se construye uniendo los tramos de costa y siguiendo el borde en sentido horario. La primera versión, que intersecaba los tramos, se quedaba sin mar porque los espigones del puerto cortan el borde del recuadro.
+  - Atribución de OSM añadida bajo los mapas, en los dos idiomas.
+- **Marcadores numerados** que corresponden a una lista ordenada bajo cada mapa. Un ajuste separa los que se solapan (dos puestos en la Praza de Abastos, dos floristerías en la misma calle de Vigo) y se recalcula al cambiar el tamaño de la ventana.
+
+**Verificación:** 7 y 8 marcadores dentro de cada mapa, sin solapes, a 1440 y 390 px y en castellano y gallego, sin errores de consola.
+
+**Pendiente:** antes de una publicación real, sustituir la lista por las floristerías confirmadas por la propietaria y con su permiso (`docs/pendientes.md`, `docs/mapas.md`).

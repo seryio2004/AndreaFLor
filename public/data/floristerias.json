@@ -1,4 +1,21 @@
 {
-  "nota": "Rellenar solo con floristerías confirmadas por la propietaria y que hayan aceptado aparecer. Formato en docs/mapas.md.",
-  "floristerias": []
+  "nota": "DATOS DE DEMOSTRACIÓN para la presentación a la propietaria (14/11/2026): floristerías reales tomadas de OpenStreetMap y de directorios públicos, presentadas como clientes sin que esté confirmado. Sustituir por la lista real, con el permiso de cada floristería, antes de publicar la web. Formato en docs/mapas.md.",
+  "demo": true,
+  "floristerias": [
+    { "nombre": "Galo Floristas", "localidad": "Vigo", "zona": "vigo", "lat": 42.238, "lon": -8.71392 },
+    { "nombre": "La Camelia", "localidad": "Vigo", "zona": "vigo", "lat": 42.23104, "lon": -8.71038 },
+    { "nombre": "A Silveira Flores", "localidad": "Vigo", "zona": "vigo", "lat": 42.22773, "lon": -8.70776 },
+    { "nombre": "Carmen Covelo", "localidad": "Vigo", "zona": "vigo", "lat": 42.22255, "lon": -8.72973 },
+    { "nombre": "Floristería Marina", "localidad": "Vigo", "zona": "vigo", "lat": 42.22138, "lon": -8.73125 },
+    { "nombre": "Florería Santo Tomé", "localidad": "Vigo", "zona": "vigo", "lat": 42.21841, "lon": -8.7274 },
+    { "nombre": "Floristería Puri", "localidad": "Vigo", "zona": "vigo", "lat": 42.21891, "lon": -8.74492 },
+    { "nombre": "Ficus Floristas", "localidad": "Ourense", "zona": "ourense", "lat": 42.34988, "lon": -7.87428 },
+    { "nombre": "Floristería Bonsai", "localidad": "Ourense", "zona": "ourense", "lat": 42.34986, "lon": -7.8667 },
+    { "nombre": "Paz y Menchu Floristas", "localidad": "Ourense", "zona": "ourense", "lat": 42.34896, "lon": -7.87097 },
+    { "nombre": "La Floristería", "localidad": "Ourense", "zona": "ourense", "lat": 42.34046, "lon": -7.87252 },
+    { "nombre": "Milagros Albitos", "localidad": "Ourense", "zona": "ourense", "lat": 42.33513, "lon": -7.86656 },
+    { "nombre": "Floristería Xaraiba", "localidad": "Ourense", "zona": "ourense", "lat": 42.33535, "lon": -7.86615 },
+    { "nombre": "Jomacos Floristería", "localidad": "Ourense", "zona": "ourense", "lat": 42.33244, "lon": -7.86165 },
+    { "nombre": "Floristería San Francisco", "localidad": "Ourense", "zona": "ourense", "lat": 42.33163, "lon": -7.85843 }
+  ]
 }

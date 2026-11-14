@@ -206,9 +206,12 @@ mark{background:#f4e9cd;color:#604a21;padding:0 3px}
 .map-canvas{position:relative}
 .map-canvas img{display:block;width:100%;height:auto;border:1px solid #e1e5dc}
 .map-markers{position:absolute;inset:0}
-.map-marker{position:absolute;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--rose);border:2px solid #fff;box-shadow:0 1px 3px #0003}
+.map-marker{position:absolute;display:grid;place-items:center;width:24px;height:24px;margin:-12px 0 0 -12px;border-radius:50%;background:var(--rose);border:2px solid #fff;box-shadow:0 1px 4px #0004;color:#fff;font-size:11px;font-weight:700;line-height:1}
 .map-empty{margin:12px 0 0;font-size:14px;color:var(--muted);font-style:italic}
-.map-list{margin:12px 0 0;padding-left:18px;font-size:14px;columns:2}
+.map-list{margin:14px 0 0;padding-left:22px;font-size:14px;columns:2;column-gap:28px}
+.map-list li{break-inside:avoid;margin-bottom:4px}
+.map-list li::marker{color:var(--rose);font-weight:700}
+.map-demo{margin:10px 0 0;font-size:11px;color:var(--muted);letter-spacing:.3px}
 
 @media(max-width:1000px){.campaigns{grid-template-columns:1fr 1fr}.campaign.featured{grid-column:1/-1}}
 @media(max-width:760px){

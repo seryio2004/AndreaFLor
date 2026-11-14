@@ -1,6 +1,12 @@
 # Mapas de reparto y floristerías
 
-Los mapas de la sección «Zona de reparto» son ilustraciones esquemáticas (costa, ríos y localidades aproximados), generadas con `node scripts/generate-maps.mjs`. Las localidades que aparecen son una **referencia geográfica**, no una lista de cobertura confirmada.
+Los mapas de la sección «Zona de reparto» muestran las ciudades de Vigo y Ourense dibujadas en el estilo de la web, a partir de datos de **OpenStreetMap** (© colaboradores de OpenStreetMap, licencia ODbL; la atribución figura bajo los mapas). Los datos simplificados (costa, ríos, calles principales y barrios) están en `scripts/map-data/` y los SVG se regeneran con `npm run maps`.
+
+## Estado actual: datos de demostración
+
+`public/data/floristerias.json` contiene **15 floristerías reales** (7 de Vigo, 8 de Ourense) presentadas como clientes **solo para la demo a la propietaria**, a petición del usuario (14/11/2026). Proceden de OpenStreetMap (Vigo y Jomacos) y de los directorios Páxinas Galegas y Bodas.net (Ourense, situadas por su calle con Nominatim). **No está confirmado que se trabaje con ellas ni que hayan dado permiso.** El archivo lleva `"demo": true`, que muestra «Datos de demostración» bajo cada mapa.
+
+**Antes de publicar de verdad:** sustituir la lista por las floristerías que indique la propietaria, con su permiso, y quitar `"demo": true`.
 
 ## Añadir floristerías
 

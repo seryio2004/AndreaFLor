@@ -12,7 +12,7 @@ Crear además un panel privado de gestión comercial para registrar posibles cli
 - No afirmar entrega diaria, plazos garantizados, catálogo concreto, stock, cobertura provincial completa, pedido mínimo, horarios ni tarifas sin confirmación.
 - Cobertura confirmada: área de Vigo y Ourense; confirmar cada localidad y condiciones de reparto mediante contacto. Las localidades de los mapas son referencia geográfica, no cobertura confirmada.
 - Confirmado por el usuario (14/11/2026): la empresa tiene 40 años, la fundaron el padre de Andrea y otros tres socios con el nombre de Diflogal y hoy la dirige Andrea; Todos los Santos es la campaña más importante; se aceptan reservas de campaña (plazos y condiciones pendientes).
-- Floristerías en los mapas (`public/data/floristerias.json`): solo las que indique la propietaria y con su permiso. No buscar ni añadir floristerías por cuenta propia.
+- Floristerías en los mapas (`public/data/floristerias.json`): ahora contiene datos de **demostración** (floristerías reales presentadas como clientes sin confirmar, a petición expresa del usuario para enseñar la demo). Antes de una publicación real, sustituir por las que indique la propietaria y con su permiso; no ampliar la lista por cuenta propia.
 - Pendientes: nombre comercial, teléfono, correo, identidad fiscal, dirección y condiciones del servicio (lista en `docs/pendientes.md`). Centralizar datos públicos en `public/config.js`; no inventarlos.
 - La web ofrece información B2B a floristerías; no es una tienda ni permite pagar o confirmar pedidos.
 

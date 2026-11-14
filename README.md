@@ -53,7 +53,7 @@ Decisiones técnicas: [docs/arquitectura.md](docs/arquitectura.md). Copias, rest
 
 ## Mapas y floristerías
 
-La sección de reparto muestra dos mapas esquemáticos dibujados (`npm run maps`). Las floristerías se añaden en `public/data/floristerias.json`, solo las confirmadas y con su permiso; ver [docs/mapas.md](docs/mapas.md).
+La sección de reparto muestra mapas dibujados de las ciudades de Vigo y Ourense a partir de datos de OpenStreetMap (`npm run maps`), con las floristerías numeradas desde `public/data/floristerias.json`. **Ahora mismo son datos de demostración** (floristerías reales no confirmadas como clientes); ver [docs/mapas.md](docs/mapas.md).
 
 ## GitHub Pages (vista previa estática)
 
