@@ -10,7 +10,9 @@ Crear además un panel privado de gestión comercial para registrar posibles cli
 
 - No usar eslóganes vacíos, superlativos, testimonios ficticios ni cifras inventadas.
 - No afirmar entrega diaria, plazos garantizados, catálogo concreto, stock, cobertura provincial completa, pedido mínimo, horarios ni tarifas sin confirmación.
-- Cobertura confirmada: área de Vigo y Ourense; confirmar cada localidad y condiciones de reparto mediante contacto.
+- Cobertura confirmada: área de Vigo y Ourense; confirmar cada localidad y condiciones de reparto mediante contacto. Las localidades de los mapas son referencia geográfica, no cobertura confirmada.
+- Confirmado por el usuario (14/11/2026): la empresa tiene 40 años, la fundaron el padre de Andrea y otros tres socios con el nombre de Diflogal y hoy la dirige Andrea; Todos los Santos es la campaña más importante; se aceptan reservas de campaña (plazos y condiciones pendientes).
+- Floristerías en los mapas (`public/data/floristerias.json`): solo las que indique la propietaria y con su permiso. No buscar ni añadir floristerías por cuenta propia.
 - Pendientes: nombre comercial, teléfono, correo, identidad fiscal, dirección y condiciones del servicio (lista en `docs/pendientes.md`). Centralizar datos públicos en `public/config.js`; no inventarlos.
 - La web ofrece información B2B a floristerías; no es una tienda ni permite pagar o confirmar pedidos.
 
@@ -28,6 +30,8 @@ El usuario solicita expresamente la skill `stageshow` de Benji Taylor (https://g
 - Node.js 22.13+ sin dependencias en el proyecto principal: `node:http`, `node:sqlite`, módulos JavaScript en el navegador. Decisión justificada en `docs/arquitectura.md`.
 - `/`: landing con servicios, cobertura, contacto configurable y formulario de solicitud controlado por `PUBLIC_FORM` (`off`/`test`/`live`). `live` no arranca sin datos comerciales, HTTPS y `PRIVACY_NOTICE_APPROVED=yes`.
 - `/acceso/` y `/admin/`: panel protegido por sesión de servidor. Cuenta creada con `npm run owner -- <usuario>`; no hay registro público.
+- `public/gl/`: versión en gallego de la landing. Mantener ambas páginas sincronizadas.
+- `npm run pages:build` genera `_site/` (solo la parte pública, rutas relativas, `noindex`) para GitHub Pages; el workflow `.github/workflows/pages.yml` solo se lanza a mano. No lanzarlo sin indicación del usuario.
 - `npm run local`: vista previa de todo (landing, panel y demo) con el panel sin contraseña mediante `LOCAL_NO_AUTH=true`. `src/config.mjs` lo rechaza en producción, fuera de 127.0.0.1 y con `PUBLIC_FORM=live`. No usar ese modo para nada que no sea ver la web en la propia máquina.
 - API: `/api/session`, `/api/leads`, `/api/leads/:id` (con sesión y CSRF) y `/api/public/form`, `/api/public/requests` (pública, con límites).
 - Datos en SQLite (`DATABASE_PATH`, por defecto `data/flores.db`), migraciones en `migrations/`. Copias con `npm run db:backup`; operación en `docs/operacion.md`.

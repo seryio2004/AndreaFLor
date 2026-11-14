@@ -31,7 +31,7 @@ La base de datos se crea en `data/flores.db` con las migraciones al arrancar.
 
 ## Qué hace
 
-**Landing** (`public/index.html`): portada con una ilustración al óleo del invernadero (`scripts/generate-hero.mjs` la pinta y `scripts/render-hero.mjs` la convierte a JPEG con Chromium), datos clave, productos destacados (clavel de Holanda, orquídeas de Colombia, margarita portuguesa), mosaico de servicios, cómo trabajamos, zona de reparto, preguntas frecuentes y contacto. Fondo de campo de claveles dibujado a trazo (`npm run field` regenera el fondo y la portada; necesita Chrome o Chromium para el JPEG) en dos capas que suben a distinta velocidad al hacer scroll (`public/field.js`; quieto con «reducir movimiento»). El fondo gana presencia al llegar a contacto, que además tiene su propia franja de claveles. Fotos genéricas CC0 de forma provisional en el resto de secciones, con créditos en `public/img/fotos/CREDITOS.md`. Teléfono y correo salen de `public/config.js`; mientras no se confirmen se muestran como pendientes y sin enlaces. Incluye un formulario de solicitud de información (floristería, localidad, zona, teléfono o correo, mensaje opcional) que se controla con `PUBLIC_FORM`:
+**Landing** (`public/index.html`, en gallego en `public/gl/`): portada con una ilustración al óleo del invernadero (`scripts/generate-hero.mjs` la pinta y `scripts/render-hero.mjs` la convierte a JPEG con Chromium), datos clave, historia de la empresa (40 años, fundada como Diflogal, hoy dirigida por Andrea), productos destacados (clavel de Holanda, orquídeas de Colombia, margarita portuguesa), mosaico de servicios, cómo trabajamos, campañas con reserva (Todos los Santos destacada), zona de reparto con mapas, preguntas frecuentes y contacto. Fondo de campo de claveles dibujado a trazo (`npm run field` regenera el fondo y la portada; necesita Chrome o Chromium para el JPEG) en dos capas que suben a distinta velocidad al hacer scroll (`public/field.js`; quieto con «reducir movimiento»). El fondo gana presencia al llegar a contacto, que además tiene su propia franja de claveles. Fotos genéricas CC0 de forma provisional en el resto de secciones, con créditos en `public/img/fotos/CREDITOS.md`. Teléfono y correo salen de `public/config.js`; mientras no se confirmen se muestran como pendientes y sin enlaces. Incluye un formulario de solicitud de información (floristería, localidad, zona, teléfono o correo, mensaje opcional) que se controla con `PUBLIC_FORM`:
 
 | Modo | Comportamiento |
 |---|---|
@@ -46,6 +46,26 @@ La confirmación al visitante solo aparece cuando el servidor ha guardado la sol
 **Seguridad:** cuenta única creada por terminal (sin registro público), contraseña con scrypt, sesiones en servidor revocables (caducan a las 2 h de inactividad y a las 12 h), cookie `HttpOnly`/`SameSite=Strict` (`Secure` en producción), token CSRF y comprobación de origen en escrituras, bloqueo temporal tras intentos fallidos, límite de envíos del formulario, validación en servidor y restricciones en la base, cabeceras CSP. `robots.txt` y `noindex` excluyen el panel de buscadores, pero la protección real es la autenticación.
 
 Decisiones técnicas: [docs/arquitectura.md](docs/arquitectura.md). Copias, restauración y borrado: [docs/operacion.md](docs/operacion.md).
+
+## Versión en gallego
+
+`public/gl/index.html` es la misma landing en gallego (norma RAG). Comparte estilos, scripts, imágenes y datos con la versión en castellano; **cualquier cambio de contenido debe hacerse en las dos páginas**. Los mensajes de validación del formulario y la página de privacidad siguen solo en castellano.
+
+## Mapas y floristerías
+
+La sección de reparto muestra dos mapas esquemáticos dibujados (`npm run maps`). Las floristerías se añaden en `public/data/floristerias.json`, solo las confirmadas y con su permiso; ver [docs/mapas.md](docs/mapas.md).
+
+## GitHub Pages (vista previa estática)
+
+```bash
+npm run pages:build   # genera _site/ con la parte pública
+```
+
+- Copia la landing (es y gl), privacidad, estilos, scripts, imágenes y datos. **No** incluye el panel, el acceso, la API ni la demo: GitHub Pages solo sirve archivos estáticos.
+- En esa versión el formulario no aparece; el contacto y las reservas se hacen por teléfono o correo (pendientes en `public/config.js`).
+- Las páginas llevan `noindex` mientras sea una vista previa (`PAGES_INDEX=true npm run pages:build` lo quita).
+- Todas las rutas son relativas, así que funciona en `https://<usuario>.github.io/<repositorio>/`.
+- Publicación: `.github/workflows/pages.yml` se ejecuta **solo a mano**. En GitHub, *Settings → Pages → Source: GitHub Actions* y después *Actions → Publicar en GitHub Pages → Run workflow*. Subir cambios a `main` no publica nada por sí solo.
 
 ## Demostración visual (Stageshow)
 

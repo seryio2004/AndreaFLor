@@ -5,7 +5,7 @@ node_modules/
 .DS_Store
 coverage/
 *.log
-data/
+/data/
 backups/
 *.db
 *.db-wal
@@ -14,3 +14,4 @@ demo/node_modules/
 demo/dist/
 public/demo/
 art/*.svg
+_site/

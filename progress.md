@@ -186,3 +186,25 @@ Stageshow (tarea 3) necesita React, Vite y `npm install`; se hará como subproye
 **Qué:** `git init` en la rama `main`, primer commit con todo el proyecto (186 archivos) y subida a `git@github.com:seryio2004/AndreaFLor.git`, que estaba vacío.
 
 **Revisado antes de subir:** `.gitignore` excluye `.env`, las bases de datos (`data/`, `*.db`), las copias (`backups/`), `node_modules`, la demo compilada (`public/demo/`, se regenera con `npm run demo:build`) y el SVG de trabajo del óleo (`art/`, se regenera con `npm run field`). No hay credenciales en el código; la contraseña de `tests/helpers.js` es solo de pruebas.
+
+## 2026-11-14 · Sesión 7: historia, campañas, mapas, gallego y GitHub Pages
+
+**Petición:** mapas de Vigo y Ourense preparados para mostrar las floristerías con las que se trabaja (la lista llegará más adelante); la historia de la empresa (40 años, fundada por el padre de Andrea y otros tres socios como Diflogal, ahora con Andrea al frente); un apartado para reservar campañas, sobre todo Todos los Santos; una versión en gallego; y dejar la web lista para GitHub Pages.
+
+**Qué:**
+- **Historia** (`#historia`): texto y línea de tiempo en tres hitos con solo los datos dados por el usuario. No se inventan fechas exactas, motivaciones ni cifras. El dato «40 años de oficio» pasa a la banda de datos clave y al antetítulo de la portada.
+- **Campañas** (`#campanas`): Todos los Santos destacada (1 de noviembre, «la campaña más importante del año», según el usuario), San Valentín y Día de la Madre. Los botones «Reservar» llevan al contacto. Con servidor, preseleccionan el motivo en el formulario, que antepone «[Reserva …]» al mensaje que llega al panel, sin cambiar el modelo de datos. Una nota aclara que plazos, variedades y precios se confirman al contactar y que la reserva solo vale cuando se confirma directamente.
+- **Mapas** (`scripts/generate-maps.mjs`, `npm run maps`): dos mapas esquemáticos dibujados en el estilo del fondo. El de Vigo tiene la ría, las islas Cíes y doce localidades; el de Ourense, los ríos Miño, Sil, Arnoia, Limia y Támega y once localidades. Las coordenadas son reales y se proyectan sobre unos límites guardados en `public/data/mapas.json`. `public/map.js` coloca los marcadores y una lista accesible desde `public/data/floristerias.json`, que **se deja vacío**: no se añaden floristerías sin la confirmación de la propietaria (`docs/mapas.md`). Mientras tanto se muestra «Próximamente». Se corrigió el relleno del mar, que no coincidía con la línea de costa, y la etiqueta de Ourense, que se montaba sobre el río.
+- **Gallego** (`public/gl/`): traducción completa en norma RAG (floraría, caravel, margarida, Día da Nai, Todos os Santos), selector ES/GL en la cabecera, `hreflang` y textos del formulario y los mapas en el idioma de la página. Pendiente: que la revise una persona nativa; la privacidad y los errores de validación siguen en castellano.
+- **GitHub Pages:**
+  - Todas las rutas de la landing, la versión en gallego y la privacidad son ahora relativas, también las `url()` del CSS.
+  - `scripts/build-pages.mjs` genera `_site/` solo con la parte pública. Añade `.nojekyll`, `noindex` (mientras sea una vista previa) y una marca de sitio estático para que el formulario no consulte una API que allí no existe. También falla si queda alguna ruta absoluta.
+  - El workflow `.github/workflows/pages.yml` pasa `check` y `test`, construye y publica, pero **solo al lanzarlo a mano**: subir a `main` no publica nada.
+
+**Verificación:**
+- `_site/` servido bajo `/AndreaFLor/`, igual que en GitHub Pages: CSS, fondo, óleo y mapas cargan bien en las dos lenguas, sin imágenes rotas ni errores de consola.
+- Con una lista temporal de dos floristerías ficticias, que no se ha guardado en el proyecto, los marcadores y la lista se pintan en su sitio y el contador se traduce.
+- En móvil a 390 px, sin desbordamiento horizontal. En el servidor local, la landing sigue funcionando.
+- `npm run check` 28/28 y `npm test` 24/24.
+
+**No publicado:** el workflow no se ha lanzado y Pages no se ha activado en el repositorio.

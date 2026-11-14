@@ -1,0 +1,16 @@
+{
+  "ancho": 800,
+  "alto": 600,
+  "vigo": {
+    "north": 42.37,
+    "south": 42.03,
+    "west": -8.96,
+    "east": -8.48
+  },
+  "ourense": {
+    "north": 42.5,
+    "south": 41.9,
+    "west": -8.25,
+    "east": -7.38
+  }
+}

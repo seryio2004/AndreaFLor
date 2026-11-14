@@ -2,7 +2,7 @@ import { business } from './config.js';
 
 if (business.name) {
   document.querySelectorAll('[data-business-name]').forEach(element => { element.firstChild.textContent = business.name; });
-  document.title = `${business.name} · Flores para floristerías`;
+  document.title = `${business.name} · ${document.documentElement.lang === 'gl' ? 'Flores para florarías' : 'Flores para floristerías'}`;
 }
 function contact(id, value, prefix, valid) {
   if (!value || !valid.test(value)) return false;

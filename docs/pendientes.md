@@ -15,6 +15,10 @@ Lista única de lo que no se puede completar sin información confirmada. Nada d
 | Días u horarios de reparto | Sección «Reparto» | Pendiente (no se afirma entrega diaria) |
 | Pedido mínimo, forma de pedido, condiciones de pago | Servicios | Pendiente |
 | Productos destacados: clavel de Holanda, orquídeas de Colombia y margarita portuguesa | Sección «Productos» | Indicados por el usuario el 14/11/2026; **confirmar con la propietaria**. Los textos solo describen cada flor y su país de origen; variedades, stock y precios no se afirman |
+| Nombre comercial actual (¿sigue siendo Diflogal?) | Cabecera, pie, `public/config.js` | Pendiente: la web solo dice que la empresa nació con el nombre de Diflogal |
+| Floristerías con las que se trabaja (para los mapas) | `public/data/floristerias.json` | Pendiente de la lista de la propietaria y del permiso de cada floristería |
+| Plazos y condiciones de reserva de campañas | Sección «Campañas» | Pendiente: la web remite a la consulta |
+| Revisión del texto en gallego | `public/gl/index.html` | Recomendable que lo revise una persona nativa antes de publicar |
 | Fotografías propias (instalaciones, producto, vehículos) | Portada, productos, mosaico, reparto | Pendiente: ahora hay fotos genéricas CC0 marcadas como ilustrativas (`public/img/fotos/CREDITOS.md`) |
 
 Al recibir cada dato: escribirlo en `public/config.js` o en el texto correspondiente; los enlaces `tel:` y `mailto:` aparecen solos cuando el formato es válido.

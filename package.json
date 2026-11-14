@@ -16,6 +16,8 @@
     "check": "node scripts/check.mjs",
     "test": "node --disable-warning=ExperimentalWarning --test \"tests/*.test.js\"",
     "demo:build": "npm --prefix demo run build",
-    "field": "node scripts/generate-field.mjs && node scripts/generate-hero.mjs && node scripts/render-hero.mjs"
+    "field": "node scripts/generate-field.mjs && node scripts/generate-hero.mjs && node scripts/render-hero.mjs",
+    "pages:build": "node scripts/build-pages.mjs",
+    "maps": "node scripts/generate-maps.mjs"
   }
 }
