@@ -1,0 +1,28 @@
+{
+  "name": "flores-demo-stageshow",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Demostración visual simulada del panel comercial, hecha con el kit de Stageshow. Separada del CRM real.",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5180",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit -p .",
+    "film": "node vendor/stageshow/scripts/film.mjs",
+    "check:css": "node vendor/stageshow/scripts/class-clash.mjs src/scenes/seguimiento"
+  },
+  "dependencies": {
+    "lucide-react": "0.468.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.3.31",
+    "@types/react-dom": "18.3.7",
+    "@vitejs/plugin-react": "4.7.0",
+    "playwright-core": "1.48.2",
+    "postcss": "8.5.31",
+    "typescript": "5.9.3",
+    "vite": "6.4.5"
+  }
+}

@@ -1,0 +1,209 @@
+/* Partiendo de examples/table-edit/table.css (Stageshow, MIT). */
+.sg .ss-stage {
+  overflow: hidden;
+  background: var(--ss-well);
+}
+
+/* Una ventana, inset arriba, sale por abajo justo bajo la última fila */
+.sg .sg-win {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  width: 580px;
+  translate: -50% 0;
+}
+
+.sg .ss-stage[data-layout='compact'] .sg-win {
+  top: 16px;
+  width: 326px;
+}
+
+.sg .sg-body {
+  min-height: 400px;
+  padding: 14px 24px 0;
+  background: var(--ss-surface);
+}
+
+.sg .ss-stage[data-layout='compact'] .sg-body {
+  padding: 12px 14px 0;
+}
+
+.sg .sg-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 12px;
+}
+
+.sg .sg-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ss-text-strong);
+}
+
+.sg .sg-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--ss-text);
+  white-space: nowrap;
+}
+
+.sg .sg-stat strong {
+  min-width: 1ch;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ss-text-strong);
+  font-variant-numeric: tabular-nums;
+}
+
+.sg .sg-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 100px 108px 96px;
+  align-items: center;
+  gap: 16px;
+  height: 44px;
+  border-bottom: 1px solid var(--ss-line-faint);
+  color: var(--ss-text-strong);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.sg .ss-stage[data-layout='compact'] .sg-row {
+  grid-template-columns: minmax(0, 1fr) 92px 82px;
+  gap: 10px;
+}
+
+.sg .ss-stage[data-layout='compact'] .sg-town {
+  display: none;
+}
+
+.sg .sg-row--head {
+  height: 36px;
+  color: var(--ss-text);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.sg .sg-row[data-focus] .sg-who {
+  font-weight: 600;
+}
+
+.sg .sg-who,
+.sg .sg-town {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sg .sg-town,
+.sg .sg-due {
+  color: var(--ss-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.sg .sg-due[data-empty],
+.sg .sg-text[data-empty] {
+  color: var(--ss-text-faint, var(--ss-text));
+}
+
+/* Estado: el disparador del menú conserva su aspecto pulsado mientras está abierto */
+.sg .sg-status-cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 32px;
+}
+
+.sg .sg-trigger {
+  position: relative;
+  display: inline-flex;
+  border-radius: var(--ss-radius-pill);
+}
+
+.sg .sg-trigger[data-hover] .ss-badge,
+.sg .sg-trigger[data-open] .ss-badge {
+  box-shadow: 0 0 0 1.5px var(--ss-accent);
+}
+
+/* Un único destello al confirmar, después desaparece */
+.sg .sg-status-cell::before,
+.sg .sg-cell::before {
+  content: '';
+  position: absolute;
+  inset: -6px 0 -6px -8px;
+  border-radius: var(--ss-radius-sm);
+  background: var(--ss-accent-soft);
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+
+.sg .sg-status-cell[data-wash]::before,
+.sg .sg-cell[data-wash]::before {
+  opacity: 1;
+  transition-duration: 0.1s;
+}
+
+/* Celda de seguimiento: el anillo va dentro, el texto no se mueve */
+.sg .sg-cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 32px;
+}
+
+.sg .sg-ring {
+  position: absolute;
+  inset: 0 0 0 -8px;
+  border-radius: var(--ss-radius-sm);
+  box-shadow: inset 0 0 0 1.5px var(--ss-accent), 0 0 0 3px var(--ss-accent-soft);
+  background: var(--ss-surface);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.sg .sg-cell[data-edit] .sg-ring {
+  opacity: 1;
+}
+
+.sg .sg-text {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.sg .sg-caret {
+  width: 1.5px;
+  height: 16px;
+  margin-left: 1px;
+  background: var(--ss-accent);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.sg .sg-caret[data-on] {
+  opacity: 1;
+  animation: ss-caret 1.06s steps(1) 0.5s infinite;
+}
+
+/* Menú de estados */
+.sg .sg-pop {
+  padding: 4px;
+  --ss-popover-shadow: var(--ss-shadow-float);
+}
+
+.sg .sg-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+}
+
+.sg .sg-tick {
+  display: grid;
+  place-items: center;
+  width: 12px;
+  color: var(--ss-accent);
+}

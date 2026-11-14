@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Acceso · Gestión comercial</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/acceso/login.js"></script>
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+  <header class="header wrap"><span class="brand">Gestión comercial<span>Acceso privado</span></span><a href="/">Ver landing ↗</a></header>
+  <main class="wrap login-main" id="contenido">
+    <h1>Acceso al panel</h1>
+    <p class="muted">Área privada para la gestión de contactos comerciales. No hay registro de usuarios: la cuenta se crea desde el servidor.</p>
+    <form id="login-form" class="panel" novalidate>
+      <label>Usuario<input name="username" autocomplete="username" required maxlength="60" autocapitalize="none" spellcheck="false"></label>
+      <label>Contraseña<input name="password" type="password" autocomplete="current-password" required maxlength="200"></label>
+      <p class="feedback" id="feedback" role="alert"></p>
+      <button class="button" type="submit">Entrar</button>
+    </form>
+  </main>
+</body>
+</html>

@@ -1,0 +1,6 @@
+# El panel está protegido por autenticación; estas reglas solo evitan que se indexe.
+User-agent: *
+Disallow: /admin/
+Disallow: /acceso/
+Disallow: /api/
+Disallow: /demo/

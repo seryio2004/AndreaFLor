@@ -1,0 +1,21 @@
+{
+  "name": "flores-mayorista",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Landing B2B y panel comercial protegido para una mayorista de flores en Vigo y Ourense",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "local": "node scripts/local.mjs",
+    "dev": "node --disable-warning=ExperimentalWarning --watch server.mjs",
+    "start": "node --disable-warning=ExperimentalWarning server.mjs",
+    "owner": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning scripts/owner.mjs",
+    "db:backup": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning scripts/backup.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node --disable-warning=ExperimentalWarning --test \"tests/*.test.js\"",
+    "demo:build": "npm --prefix demo run build",
+    "field": "node scripts/generate-field.mjs && node scripts/generate-hero.mjs && node scripts/render-hero.mjs"
+  }
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Gestión comercial · Panel privado</title><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><script type="module" src="/admin/app.js"></script></head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="header wrap"><a class="brand" href="/admin/">Gestión comercial<span>Floristerías · Vigo y Ourense</span></a><nav aria-label="Sesión"><span class="muted" id="user"></span><a href="/">Ver landing ↗</a><button class="button small secondary" id="logout" type="button">Cerrar sesión</button></nav></header>
+<main class="wrap admin-main" id="contenido">
+  <div class="admin-title"><div><p class="eyebrow">Panel de seguimiento</p><h1>Posibles clientes</h1><p class="muted">Registro de contactos y próximas acciones comerciales.</p></div><button class="button" id="new-lead" type="button" disabled>Añadir contacto +</button></div>
+  <aside class="notice" id="env-notice"><strong>Entorno de desarrollo.</strong> Usa solo datos ficticios hasta completar los requisitos de privacidad y despliegue documentados en el README.</aside>
+  <div class="stats" aria-label="Resumen comercial"><div class="stat"><span>Total de contactos</span><strong id="total">–</strong></div><div class="stat"><span>Sin contactar</span><strong id="new-count">–</strong></div><div class="stat"><span>Interesados</span><strong id="interested">–</strong></div><div class="stat"><span>Seguimientos para hoy o vencidos</span><strong id="due">–</strong></div></div>
+  <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
+  <section class="panel" id="editor" hidden aria-labelledby="editor-title">
+    <h2 id="editor-title">Nuevo contacto</h2>
+    <p class="muted" id="editor-meta" hidden></p>
+    <div class="request-message" id="request-message" hidden><span>Mensaje recibido desde la web</span><p id="request-text"></p></div>
+    <form id="lead-form" novalidate>
+      <div class="form-grid">
+        <label>Nombre de la floristería *<input name="business" required maxlength="120" autocomplete="off"></label>
+        <label>Persona de contacto<input name="contact" maxlength="120" autocomplete="off"></label>
+        <label>Localidad *<input name="town" required maxlength="100" autocomplete="off"></label>
+        <label>Zona *<select name="area"><option>Vigo</option><option>Ourense</option></select></label>
+        <label>Teléfono<input type="tel" name="phone" maxlength="30" autocomplete="off"></label>
+        <label>Correo electrónico<input type="email" name="email" maxlength="160" autocomplete="off"></label>
+        <label>Estado<select name="status"><option value="nuevo">Nuevo</option><option value="contactado">Contactado</option><option value="interesado">Interesado</option><option value="cliente">Cliente</option><option value="descartado">Descartado</option></select></label>
+        <label>Fecha de seguimiento<input type="date" name="followUp"></label>
+        <label class="full">Próxima acción<input name="nextAction" maxlength="200" autocomplete="off"></label>
+        <label class="full">Notas<textarea name="notes" rows="3" maxlength="2000"></textarea></label>
+      </div><p class="muted">* Campos obligatorios. Indica al menos un teléfono o un correo.</p>
+      <p class="feedback error" id="form-error" role="alert"></p>
+      <div class="form-actions"><button class="button" type="submit" id="save">Guardar contacto</button><button class="button secondary" type="button" id="cancel">Cancelar</button><button class="button danger" type="button" id="delete" hidden>Eliminar contacto</button></div>
+    </form>
+  </section>
+  <div class="toolbar"><label>Buscar floristería, contacto o localidad<input id="search" type="search" placeholder="Escribe para buscar…"></label><label>Zona<select id="area"><option value="">Todas las zonas</option><option>Vigo</option><option>Ourense</option></select></label><label>Estado<select id="status"><option value="">Todos los estados</option><option value="nuevo">Nuevo</option><option value="contactado">Contactado</option><option value="interesado">Interesado</option><option value="cliente">Cliente</option><option value="descartado">Descartado</option></select></label><label>Origen<select id="source"><option value="">Todos</option><option value="web">Web</option><option value="manual">Manual</option></select></label></div>
+  <div class="table-wrap" id="table-wrap" hidden><table><caption class="muted">Contactos guardados en el servidor</caption><thead><tr><th scope="col">Floristería</th><th scope="col">Zona</th><th scope="col">Contacto</th><th scope="col">Estado</th><th scope="col">Seguimiento</th><th scope="col">Gestión</th></tr></thead><tbody id="rows"></tbody></table></div>
+  <div class="empty" id="empty" aria-live="polite"><p id="empty-text">Cargando contactos…</p><button class="button secondary" type="button" id="retry" hidden>Reintentar</button></div>
+</main>
+</body></html>

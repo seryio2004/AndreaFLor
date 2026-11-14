@@ -1,0 +1,24 @@
+:root {
+  --paper: #f6f5ef;
+  --ink: #203c31;
+  --muted: #58665c;
+  --line: #d5dbd1;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+body { margin: 0; }
+.host { width: min(720px, calc(100% - 32px)); margin: 0 auto; padding: 40px 0 56px; }
+.host-label { display: inline-block; margin: 0 0 16px; padding: 3px 10px; border: 1px solid #ac8746; border-radius: 20px; background: #f4e9cd; color: #604a21; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+.host h1 { margin: 0 0 12px; font: 400 clamp(28px, 4vw, 38px)/1.15 Georgia, 'Times New Roman', serif; letter-spacing: -1px; }
+.host-intro { margin: 0 0 28px; color: var(--muted); font-size: 15px; }
+.host-figure { border-radius: 12px; overflow: hidden; }
+.host-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; margin-top: 18px; font-size: 13px; color: var(--muted); }
+.host-controls button { padding: 9px 16px; border: 1px solid var(--ink); border-radius: 3px; background: var(--ink); color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+.host-controls button:hover { background: #365645; }
+.host-controls button:focus-visible, .host a:focus-visible { outline: 3px solid #a56c2d; outline-offset: 3px; }
+.host-credit { margin-top: 32px; font-size: 12px; color: var(--muted); }
+.host-credit a { color: inherit; }
+.capture { width: min(660px, 100%); margin: 0 auto; }
+@media (max-width: 420px) { .host { padding-top: 24px; } }
