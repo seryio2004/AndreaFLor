@@ -239,3 +239,12 @@ Stageshow (tarea 3) necesita React, Vite y `npm install`; se hará como subproye
 - Fotos: añadidas rosas, tulipanes, anthurium y verdes (CC0, rawpixel vía Openverse, convertidas de WebP a JPEG); retiradas orquideas.jpg y margaritas.jpg. Créditos actualizados.
 - Documentación: README, AGENTS y docs/pendientes.
 - Verificación: `npm run check` y `npm test` (24/24) correctos; capturas con Chromium sin interfaz a 1440 px y 390 px (ES y GL). Límite: la foto de verdes es eucalipto genérico, no producto propio.
+
+## 17/11/2026 — Enredaderas en el fondo
+
+**Petición:** que al hacer scroll aparezcan más flores y suban más; añadir margaritas y rosas con el mismo diseño que los claveles, en estilo enredadera; al final el fondo debe cubrir casi toda la pantalla.
+
+- `public/vines.js`: genera en el navegador (semilla fija) tallos serpenteantes con hojas, zarcillos y flores (clavel, margarita, rosa) en trazo a mano con mancha de acuarela. El número de tallos se adapta al ancho (15–32). Cada tallo se dibuja con `stroke-dashoffset` según el avance de la página y sus hojas y flores brotan al alcanzarlas; los laterales empiezan antes y los centrales al final.
+- `public/field.js` los coloca entre las dos capas de claveles; `styles.css` define colores y transiciones; `scripts/build-pages.mjs` incluye el nuevo archivo.
+- Reducir movimiento: sin transiciones y estado fijo intermedio (no tapa el texto).
+- Verificación: capturas con Chromium sin interfaz a 1440×900 y 390×844 en 0/25/50/75/90/100 % del scroll; texto legible sobre el fondo. `npm run check` y `npm test` correctos.

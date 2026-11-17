@@ -7,7 +7,7 @@ import { cpSync, mkdirSync, rmSync, readFileSync, writeFileSync, existsSync } fr
 import path from 'node:path';
 
 const out = '_site';
-const include = ['index.html', 'gl', 'privacidad', 'styles.css', 'favicon.svg', 'config.js', 'contact.js', 'request.js', 'field.js', 'map.js', 'shared', 'img', 'data'];
+const include = ['index.html', 'gl', 'privacidad', 'styles.css', 'favicon.svg', 'config.js', 'contact.js', 'request.js', 'field.js', 'vines.js', 'map.js', 'shared', 'img', 'data'];
 const pages = ['index.html', 'gl/index.html', 'privacidad/index.html'];
 
 rmSync(out, { recursive: true, force: true });
