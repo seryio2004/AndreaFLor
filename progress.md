@@ -228,3 +228,14 @@ Stageshow (tarea 3) necesita React, Vite y `npm install`; se hará como subproye
 **Verificación:** 7 y 8 marcadores dentro de cada mapa, sin solapes, a 1440 y 390 px y en castellano y gallego, sin errores de consola.
 
 **Pendiente:** antes de una publicación real, sustituir la lista por las floristerías confirmadas por la propietaria y con su permiso (`docs/pendientes.md`, `docs/mapas.md`).
+
+## 17/11/2026 — Historia sin Diflogal y nuevas líneas de producto
+
+**Petición:** quitar los números de la primera sección, quitar «Diflogal», reescribir la historia a partir del texto de la familia (apuesta por la floricultura en producción y distribución, 40 años, relevo generacional) y cambiar los productos a clavel colombiano, rosas de Ecuador y Colombia, flor de Holanda (tulipán, orquídea…), anthurium y verdes nacionales.
+
+- Franja de datos clave: eliminados los «01/02/03» (y su regla CSS).
+- Historia (ES y GL): nuevo texto de entrada y cronología «Comienza la andadura / Producción y distribución / Relevo generacional»; ya no aparece Diflogal en la web.
+- Productos (ES y GL): cinco fichas nuevas; sustituyen a clavel de Holanda, orquídeas de Colombia y margarita portuguesa. Los ejemplos de flor de Holanda son orientativos y se remite a consultar disponibilidad. Meta descripciones actualizadas.
+- Fotos: añadidas rosas, tulipanes, anthurium y verdes (CC0, rawpixel vía Openverse, convertidas de WebP a JPEG); retiradas orquideas.jpg y margaritas.jpg. Créditos actualizados.
+- Documentación: README, AGENTS y docs/pendientes.
+- Verificación: `npm run check` y `npm test` (24/24) correctos; capturas con Chromium sin interfaz a 1440 px y 390 px (ES y GL). Límite: la foto de verdes es eucalipto genérico, no producto propio.

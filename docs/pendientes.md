@@ -14,8 +14,8 @@ Lista única de lo que no se puede completar sin información confirmada. Nada d
 | Localidades atendidas dentro del área de Vigo y Ourense | Sección «Zona de reparto» | Pendiente: solo está confirmado «área de Vigo y Ourense» |
 | Días u horarios de reparto | Sección «Reparto» | Pendiente (no se afirma entrega diaria) |
 | Pedido mínimo, forma de pedido, condiciones de pago | Servicios | Pendiente |
-| Productos destacados: clavel de Holanda, orquídeas de Colombia y margarita portuguesa | Sección «Productos» | Indicados por el usuario el 14/11/2026; **confirmar con la propietaria**. Los textos solo describen cada flor y su país de origen; variedades, stock y precios no se afirman |
-| Nombre comercial actual (¿sigue siendo Diflogal?) | Cabecera, pie, `public/config.js` | Pendiente: la web solo dice que la empresa nació con el nombre de Diflogal |
+| Productos: clavel colombiano, rosas de Ecuador y Colombia, flor de Holanda, anthurium y verdes nacionales | Sección «Productos» | Indicados por el usuario el 17/11/2026 (sustituyen a los del 14/11); los ejemplos de flor de Holanda (tulipán, orquídea de corte, ranúnculo…) son orientativos; **confirmar con la propietaria**. Los textos solo describen cada flor y su país de origen; variedades, stock y precios no se afirman |
+| Nombre comercial actual (¿sigue siendo Diflogal?) | Cabecera, pie, `public/config.js` | Pendiente. Por indicación del usuario (17/11/2026) la web ya no menciona Diflogal |
 | Floristerías con las que se trabaja (para los mapas) | `public/data/floristerias.json` | **Ahora hay 15 floristerías de demostración no confirmadas.** Sustituir por la lista real, con el permiso de cada floristería, antes de publicar |
 | Plazos y condiciones de reserva de campañas | Sección «Campañas» | Pendiente: la web remite a la consulta |
 | Revisión del texto en gallego | `public/gl/index.html` | Recomendable que lo revise una persona nativa antes de publicar |

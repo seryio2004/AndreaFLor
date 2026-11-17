@@ -64,9 +64,8 @@ mark{background:#f4e9cd;color:#604a21;padding:0 3px}
 /* Banda de datos clave */
 .facts{background:var(--olive);color:#fff;padding-block:56px}
 .facts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
-.facts h2{font-size:24px;letter-spacing:-.4px;margin:10px 0 10px}
+.facts h2{font-size:24px;letter-spacing:-.4px;margin:0 0 10px}
 .facts p{margin:0;color:#eef1e4;font-size:15px}
-.fact-n{font-size:12px;letter-spacing:2px;color:#d6dcc2}
 
 /* Secciones sobre el campo */
 .landing .section{border-top:0;padding-block:96px}
