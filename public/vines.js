@@ -217,8 +217,11 @@ export function createVines(container) {
     builtWidth = window.innerWidth;
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
     const r = rng(2026);
-    const unit = Math.min(1.25, Math.max(0.7, W / 1100));
-    const count = Math.round(Math.min(32, Math.max(15, W / 48)));
+    // En móvil el fondo gana protagonismo: más tallos, flores algo mayores y crecimiento más temprano
+    const narrow = W < 700;
+    const unit = narrow ? 0.9 : Math.min(1.25, Math.max(0.7, W / 1100));
+    const count = narrow ? Math.round(Math.max(20, W / 18)) : Math.round(Math.min(32, Math.max(15, W / 48)));
+    const reach = narrow ? 0.55 : 0.72;
     const specs = [];
     for (let i = 0; i < count; i += 1) {
       // Repartidas a lo ancho con algo de azar; la «centralidad» decide cuándo empiezan a crecer
@@ -226,7 +229,7 @@ export function createVines(container) {
       const centrality = 1 - Math.abs(x - W / 2) / (W / 2);
       const scale = unit * (0.75 + r() * 0.45);
       const height = H * (0.92 - centrality * 0.3 - r() * 0.14);
-      const start = -0.12 + Math.pow(centrality, 1.3) * 0.72 + (r() - 0.5) * 0.1;
+      const start = -0.12 + Math.pow(centrality, 1.3) * reach + (r() - 0.5) * 0.1;
       const span = 0.24 + r() * 0.16;
       specs.push({ x, scale, height, start, span, depth: r() });
     }

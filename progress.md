@@ -248,3 +248,9 @@ Stageshow (tarea 3) necesita React, Vite y `npm install`; se hará como subproye
 - `public/field.js` los coloca entre las dos capas de claveles; `styles.css` define colores y transiciones; `scripts/build-pages.mjs` incluye el nuevo archivo.
 - Reducir movimiento: sin transiciones y estado fijo intermedio (no tapa el texto).
 - Verificación: capturas con Chromium sin interfaz a 1440×900 y 390×844 en 0/25/50/75/90/100 % del scroll; texto legible sobre el fondo. `npm run check` y `npm test` correctos.
+
+## 17/11/2026 — Más protagonismo del fondo en móvil
+
+- `vines.js`: en pantallas de menos de 700 px, unos 20–22 tallos (antes 15), flores algo mayores y crecimiento más temprano.
+- `styles.css` (≤760 px): enredaderas más opacas y trazo algo más grueso; halo suave del color del papel en los textos que van directamente sobre el fondo para mantener la legibilidad.
+- Verificación: capturas a 390×844 en varios puntos del scroll; `npm run check` y `npm test` correctos. Publicado con el workflow de GitHub Pages a petición del usuario.
