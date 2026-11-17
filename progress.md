@@ -254,3 +254,11 @@ Stageshow (tarea 3) necesita React, Vite y `npm install`; se hará como subproye
 - `vines.js`: en pantallas de menos de 700 px, unos 20–22 tallos (antes 15), flores algo mayores y crecimiento más temprano.
 - `styles.css` (≤760 px): enredaderas más opacas y trazo algo más grueso; halo suave del color del papel en los textos que van directamente sobre el fondo para mantener la legibilidad.
 - Verificación: capturas a 390×844 en varios puntos del scroll; `npm run check` y `npm test` correctos. Publicado con el workflow de GitHub Pages a petición del usuario.
+
+## 17/11/2026 — Fondo visible en móvil durante todo el recorrido
+
+**Problema:** en móvil casi todo el ancho lo ocupan fichas opacas y las enredaderas crecían tarde, así que el fondo apenas se veía.
+
+- `vines.js` (<700 px): los tallos ya aparecen crecidos desde el inicio de la página (arranque adelantado) y siguen creciendo con el scroll.
+- `styles.css` (≤760 px): fichas (productos, pasos, campañas, mapas, preguntas) semitransparentes con desenfoque para que el fondo se vea a través; títulos de sección, nota de productos y contacto sobre un panel translúcido; la cronología de la historia pasa a fichas. Sustituye al halo de texto anterior.
+- Verificación: capturas a 390×844 en 3/12/25/40/60/80 % del scroll; texto legible y fondo visible en todas. `npm run check` y `npm test` correctos.
